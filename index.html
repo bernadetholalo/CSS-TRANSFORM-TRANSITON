@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Transform / Transition</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+
+    <!-- ============================= -->
+    <!-- MAIN TITLE -->
+    <!-- ============================= -->
+
+    <header class="main-title">
+        <h1>CSS TRANSFORM / TRANSITION</h1>
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- SECTION TITLE -->
+    <!-- ============================= -->
+
+    <section class="section-title">
+        <h2 id="transformTitle">CSS Transform: Skew</h2>
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- BEFORE AND AFTER -->
+    <!-- ============================= -->
+
+    <section class="transform-container">
+
+        <!-- BEFORE -->
+        <div class="transform-item">
+
+            <h3>Before</h3>
+
+            <div class="box before-box" id="beforeBox">
+
+                <span id="beforeWord">Skew</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- AFTER -->
+        <div class="transform-item">
+
+            <h3>After</h3>
+
+            <div class="box after-box" id="afterBox">
+
+                <span id="afterWord">Skew</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- INFORMATION -->
+    <!-- ============================= -->
+
+    <div class="instruction">
+        <p>Click a button to see the CSS Transform effect</p>
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- BUTTONS -->
+    <!-- ============================= -->
+
+    <div class="button-container">
+
+        <button class="transform-button" onclick="translateBox()">
+            Translate
+        </button>
+
+        <button class="transform-button" onclick="rotateBox()">
+            Rotate
+        </button>
+
+        <button class="transform-button" onclick="scaleBox()">
+            Scale
+        </button>
+
+        <button class="transform-button" onclick="skewBox()">
+            Skew
+        </button>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script>
+
+        const beforeBox = document.getElementById("beforeBox");
+        const afterBox = document.getElementById("afterBox");
+
+        const beforeWord = document.getElementById("beforeWord");
+        const afterWord = document.getElementById("afterWord");
+
+        const transformTitle = document.getElementById("transformTitle");
+
+
+        // =====================================
+        // UPDATE WORDS
+        // =====================================
+
+        function updateWords(word) {
+
+            beforeWord.textContent = word;
+            afterWord.textContent = word;
+
+            transformTitle.textContent = "CSS Transform: " + word;
+        }
+
+
+        // =====================================
+        // TRANSLATE
+        // =====================================
+
+        function translateBox() {
+
+            updateWords("Translate");
+
+            // Reset first so animation can replay
+            afterBox.style.transform = "none";
+
+            setTimeout(function() {
+
+                afterBox.style.transform = "translateX(75px)";
+
+            }, 50);
+        }
+
+
+        // =====================================
+        // ROTATE
+        // =====================================
+
+        function rotateBox() {
+
+            updateWords("Rotate");
+
+            // Reset first
+            afterBox.style.transform = "none";
+
+            setTimeout(function() {
+
+                afterBox.style.transform = "rotate(20deg)";
+
+            }, 50);
+        }
+
+
+        // =====================================
+        // SCALE
+        // =====================================
+
+        function scaleBox() {
+
+            updateWords("Scale");
+
+            // Reset first
+            afterBox.style.transform = "none";
+
+            setTimeout(function() {
+
+                afterBox.style.transform = "scale(0.72)";
+
+            }, 50);
+        }
+
+
+        // =====================================
+        // SKEW
+        // =====================================
+
+        function skewBox() {
+
+            updateWords("Skew");
+
+            // Reset first
+            afterBox.style.transform = "none";
+
+            setTimeout(function() {
+
+                afterBox.style.transform = "skew(20deg, 8deg)";
+
+            }, 50);
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
